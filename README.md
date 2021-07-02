@@ -1,2 +1,0 @@
-# khosting
-propuesta para hosting 
