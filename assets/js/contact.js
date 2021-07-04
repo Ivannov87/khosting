@@ -47,11 +47,11 @@ $(document).ready(function(){
                     minlength: "your Number must consist of at least 5 characters"
                 },
                 email: {
-                    required: "no email, no message"
+                    required: "sin email, sin mensaje"
                 },
                 message: {
-                    required: "um...yea, you have to write something to send this form.",
-                    minlength: "thats all? really?"
+                    required: "um...claro, youes necesario que escribas algo en el mensaje.",
+                    minlength: "eso es todo? enserio?"
                 }
             },
             submitHandler: function(form) {
