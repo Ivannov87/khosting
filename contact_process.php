@@ -1,8 +1,8 @@
 <?php
 
-	require'class.phpmailer.php'
+	
 
-    $to = "khosting@khosting.com.mx";
+    $to = "bot@khosting.com.mx";
     $from = $_REQUEST['email'];
     $name = $_REQUEST['name'];
     $subject = $_REQUEST['subject'];
