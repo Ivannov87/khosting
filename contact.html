@@ -343,7 +343,7 @@
 <!-- Jquery Plugins, main Jquery -->
 <script src="./assets/js/plugins.js"></script>
 <script src="./assets/js/main.js"></script>
-<srcript src="./assets/js/mail.js"></srcript>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -360,48 +360,63 @@
     });
 
     function Send() {
-
-
-        var api = 'https://api.sendinblue.com/v3/smtp/email';
-        var api_key = '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';
-
-        var data = {
-            "sender": {
-                "name": "Khosting Mexico",
-                "email": "khosting@khosting.com.mx"
-            },
-            "to": [
-                {
-                    "email": $("#email").val(),
-                    "name": $("#name").val()
-                }
-            ],
-            "textContent": $("#message").val(),
-            "subject": $("#subject").val()
-        }
-
-        alert(JSON.stringify(data));
-
-        $.ajax(
-            {
-                URL: api,
-                type: "POST",
-                data: JSON.stringify(data),
-                dataType: "json",
-                contentType: "application/json",
-                headers: {
-                    "api-key": api_key 
-                },
-                success: function (data) {
-                    alert('Mensaje Enviado');
-                },
-                error: function (err) {
-                    //alert(JSON.stringify(err));
-                    alert('no se pudo enviar el mensaje !');
-                }
-
+        Email.send({
+            Host: "smtp-relay.sendinblue.com",
+            Username: "ivanrv87@gmail.com",
+            Password: "49AVTBvwbKMxj0Qf",
+            To: 'khosting@khosting.com.mx',
+            From: $('#mail').val(),
+            Subject: $('#subject').val(),
+            Body: $('#message').val(),
+        })
+            .then(function (message) {
+                alert("mail sent successfully")
             });
     }
+
+    // // function Send() {
+
+
+    //     var api = 'https://api.sendinblue.com/v3/smtp/email';
+    //     var api_key = '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';
+
+    //     var data = {
+    //         "sender": {
+    //             "name": "Khosting Mexico",
+    //             "email": "khosting@khosting.com.mx"
+    //         },
+    //         "to": [
+    //             {
+    //                 "email": $("#email").val(),
+    //                 "name": $("#name").val()
+    //             }
+    //         ],
+    //         "textContent": $("#message").val(),
+    //         "subject": $("#subject").val()
+    //     }
+
+    //     alert(JSON.stringify(data));
+
+    //     $.ajax(
+    //         {
+    //             URL: api,
+    //             type: "POST",
+    //             data: JSON.stringify(data),
+    //             dataType: "json",
+    //             contentType: "application/json",
+    //             headers: {
+    //                 '"api-key"': "'"+ api_key + "'"
+    //             },
+    //             success: function (data) {
+    //                 alert('Mensaje Enviado');
+    //             },
+    //             error: function (err) {
+
+    //                 alert('no se pudo enviar el mensaje !');
+    //             }
+
+    //         });
+    // }
 
 </script>
 

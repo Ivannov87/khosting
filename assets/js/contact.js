@@ -53,12 +53,8 @@ $(document).ready(function () {
                         required: "um...claro, es necesario que escribas algo en el mensaje.",
                         minlength: "eso es todo? enserio?"
                     }
-                }
+                 }//,
                 // submitHandler: function (form) {
-
-
-
-
                 //     $(form).ajaxSubmit({
                 //         type: "POST",
                 //         data: $(form).serialize(),
@@ -81,7 +77,7 @@ $(document).ready(function () {
                 //             })
                 //         }
                 //     })
-                // }
+                //}
             })
         })
 

@@ -1,5 +1,7 @@
 <?php
 
+	require'class.phpmailer.php'
+
     $to = "khosting@khosting.com.mx";
     $from = $_REQUEST['email'];
     $name = $_REQUEST['name'];
@@ -32,6 +34,6 @@
 	$body .= "</tbody></table>";
 	$body .= "</body></html>";
 
-    //$send = mail($to, $subject, $body, $headers);
+    $send = mail($to, $subject, $body, $headers);
 
 ?>
