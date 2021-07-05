@@ -1,7 +1,5 @@
 <?php
 
-	
-
     $to = "bot@khosting.com.mx";
     $from = $_REQUEST['email'];
     $name = $_REQUEST['name'];
