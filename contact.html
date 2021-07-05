@@ -125,7 +125,7 @@
                     <h2 class="contact-title">Ponte en Contacto</h2>
                 </div>
                 <div class="col-lg-8">
-                    <form class="form-contact contact_form" novalidate="novalidate">
+                    <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group">
@@ -343,37 +343,37 @@
 <!-- Jquery Plugins, main Jquery -->
 <script src="./assets/js/plugins.js"></script>
 <script src="./assets/js/main.js"></script>
-<script src="https://smtpjs.com/v3/smtp.js"></script>
+<!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
 
 <script type="text/javascript">
     $(document).ready(function () {
 
-        $('#btnSend').on('click', function () {
+        // $('#btnSend').on('click', function () {
 
-            var msj = $('#message').val();
-            var nom = $('#name').val();
-            var mail = $('#email').val();
-            var asunto = $('#subject').val();
-            //alert(msj + ' ' + nom + ' ' + mail + ' ' + asunto);
-            Send();
-        });
+        //     var msj = $('#message').val();
+        //     var nom = $('#name').val();
+        //     var mail = $('#email').val();
+        //     var asunto = $('#subject').val();
+        //     //alert(msj + ' ' + nom + ' ' + mail + ' ' + asunto);
+        //     //Send();
+        // });
     });
 
-    function Send() {
-        Email.send({
-            Host: "smtp.gmail.com",
-            //Port:"587",
-            Username: "ivanrv87@gmail.com",
-            Password: "AvM5kVcD0v2",
-            To: 'ivanrv87@gmail.com',
-            From: $('#mail').val(),
-            Subject: $('#subject').val(),
-            Body: $('#message').val(),
-        })
-            .then(function (message) {
-                alert("mail sent successfully")
-            });
-    }
+    // function Send() {
+    //     Email.send({
+    //         Host: "smtp.gmail.com",
+    //         //Port:"587",
+    //         Username: "ivanrv87@gmail.com",
+    //         Password: "AvM5kVcD0v2",
+    //         To: 'ivanrv87@gmail.com',
+    //         From: $('#mail').val(),
+    //         Subject: $('#subject').val(),
+    //         Body: $('#message').val(),
+    //     })
+    //         .then(function (message) {
+    //             alert("mail sent successfully")
+    //         });
+    // }
 
     // // function Send() {
 
