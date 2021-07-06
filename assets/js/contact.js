@@ -69,6 +69,7 @@ $(document).ready(function () {
                             // })
                             //$('#contactForm').trigger('reset');
                             //alert('Mensaje enviado');
+                            
 
                         },
                         error: function() {
@@ -80,6 +81,8 @@ $(document).ready(function () {
                             //alert('Mensaje no enviado');
                         }
                     })
+                    alert('Mensaje Enviado');
+                    window.location.href= "https://khosting.com.mx";
                 }
             })
         })
