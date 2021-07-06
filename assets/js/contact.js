@@ -35,11 +35,11 @@ $(document).ready(function () {
                 messages: {
                     name: {
                         required: "come on, you have a name, don't you?",
-                        minlength: "your name must consist of at least 2 characters"
+                        minlength: "el nombre debe contener almenos 2 caracteres"
                     },
                     subject: {
                         required: "come on, you have a subject, don't you?",
-                        minlength: "your subject must consist of at least 4 characters"
+                        minlength: "el asunto debe tener almenos 4 caracteres"
                     },
                     number: {
                         required: "come on, you have a number, don't you?",
@@ -54,28 +54,30 @@ $(document).ready(function () {
                     }
                  },
                 submitHandler: function (form) {
-
-                    alert('se envio form');
                     $(form).ajaxSubmit({
-                        type: "POST",
+                        type:"POST",
                         data: $(form).serialize(),
-                        url: "contact_process.php",
-                        success: function () {
-                            $('#contactForm :input').attr('disabled', 'disabled');
-                            $('#contactForm').fadeTo("slow", 1, function () {
-                                $(this).find(':input').attr('disabled', 'disabled');
-                                $(this).find('label').css('cursor', 'default');
-                                $('#success').fadeIn()
-                                $('.modal').modal('hide');
-                                $('#success').modal('show');
-                            })
+                        url:"contact_process.php",
+                        success: function() {
+                            // $('#contactForm :input').attr('disabled', 'disabled');
+                            // $('#contactForm').fadeTo( "slow", 1, function() {
+                            //     $(this).find(':input').attr('disabled', 'disabled');
+                            //     $(this).find('label').css('cursor','default');
+                            //     $('#success').fadeIn()
+                            //     $('.modal').modal('hide');
+                            //     $('#success').modal('show');
+                            // })
+                            //$('#contactForm').trigger('reset');
+                            //alert('Mensaje enviado');
+
                         },
-                        error: function () {
-                            $('#contactForm').fadeTo("slow", 1, function () {
-                                $('#error').fadeIn()
-                                $('.modal').modal('hide');
-                                $('#error').modal('show');
-                            })
+                        error: function() {
+                            // $('#contactForm').fadeTo( "slow", 1, function() {
+                            //     $('#error').fadeIn()
+                            //     $('.modal').modal('hide');
+                            //     $('#error').modal('show');
+                            // })
+                            //alert('Mensaje no enviado');
                         }
                     })
                 }
